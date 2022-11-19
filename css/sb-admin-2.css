@@ -10377,7 +10377,6 @@ a:focus {
   margin: 0;
   white-space: nowrap;
   padding: .5rem 1.5rem;
-  text-transform: uppercase;
   font-weight: 800;
   font-size: 0.65rem;
   color: #b7b9cc;
@@ -10455,7 +10454,6 @@ a:focus {
   font-weight: 800;
   padding: 1.5rem 1rem;
   text-align: center;
-  text-transform: uppercase;
   letter-spacing: 0.05rem;
   z-index: 1;
 }
