@@ -60,7 +60,7 @@
 
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -106,7 +106,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="usersetting.html" aria-expanded="true" >
                     <i class="fas fa-fw fa-cog"></i>
                     <span>계정 관리</span>
@@ -179,21 +179,44 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">접속 정보 설정 </h1>
-                    <p class="mb-4"><a target="_blank"
-                            href="https://datatables.net"></a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">비밀번호 변경</h1>
+                    <p class="mb-4"></p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">connection info</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Change Password</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            
+                                <!-- PASSWORD -->
+                                <p style="float:left; margin-left:48px;">Password : </p>
+                                <div class="col-sm-3 mb-3 mb-sm-10" style="float:left;">
+                                    
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="password">
+                                </div>
+                                <a href="#" class="btn btn-primary">
+                                    <span class="icon text-white-50">
+                                    </span>
+                                    <span class="text">검색</span>
+                                </a>
+                                <br/>
 
-                                <input/><label>Prometheus</label><br/>
-                                <input/><label>kubernetes API</label>
+
+                                <!-- PASSWORD CHECK -->
+                                <br/>
+                                <p style="float:left;">Password Check : </p>
+                                <div class="col-sm-3 mb-3 mb-sm-10" style="float:left;">
+                                    
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="password check">
+                                </div>
+                                <a href="#" class="btn btn-primary" style="float:left; margin-right:15px;">
+                                    <span class="icon text-white-50">
+                                    </span>
+                                    <span class="text">검색</span>
+                                </a>
                             </div>
                         </div>
                     </div>
