@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        {{ request.user }} <br /><br />
+    {% endif %}
+
+
+    {% for post in posts %}
+        {{ post.id }} <a href="/board/read/{{post.id}}">{{ post.title }}</a> {{ post.writer }}<br />
+    {% endfor %}
+<a href="/board/create">게시글 작성</a>
+</body>
+</html>

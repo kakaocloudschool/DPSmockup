@@ -1,24 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin 2 - Login</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <title>SB Admin 2 - Tables</title>
 
 </head>
 
@@ -41,24 +24,24 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="{% url 'user_login' %}" method="post" id="form">
+                                        {% csrf_token %}
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputUsername" aria-describedby="Username"
-                                                placeholder="Username">
+                                            <input type="username" class="form-control form-control-user"
+                                                id="username" aria-describedby="Username"
+                                                placeholder="Username" name="username" value="">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="password" placeholder="Password" name="password" value="">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                                <input type="checkbox" class="custom-control-input" id="customCheck" name="agreebtn">
+                                                <label class="custom-control-label" for="customCheck">Remember Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="#" onclick="return chk_form()" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                     </form>
@@ -76,18 +59,22 @@
 
         </div>
 
-    </div>
+        <script>
+            function chk_form() {
+                if(document.getElementById("username").value==''){
+                    alert("아이디을 입력해주십시오.");
+                    return false;
+                }
+                if(document.getElementById("password").value==''){
+                    alert("비밀번호를 입력해주십시오.");
+                    return false;
+                }
+                if ( ! $('input[name=agreebtn]:checked').val()) {
+                    alert('개인정보 활용에 동의해주십시오.');
+                    return false;
+                }
+                document.getElementById('form').submit();
+            }
+        </script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-</body>
-
-</html>
+{% endblock %}

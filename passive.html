@@ -6,7 +6,7 @@
     <title>SB Admin 2 - Tables</title>
 
 </head>
-
+<!-- 수동 스케줄러-->
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -127,94 +127,54 @@
                             <h6 class="m-0 font-weight-bold text-primary">Schedule List</h6>
                         </div>
                         <div class="card-body">
-                            <form   >
-
-                                <!--LIST-->
-                                <p style="float:left; margin-right:10px;">NS : </p>
-                                <div class="dropdown mb-4" style="float:left; margin-right:15px;">
-                                    <button class="btn btn-primary dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false" style="width:130px; background-color:lightslategray; border-color:lightslategray">
-                                        Namespace
-                                    </button>
-                                    <div class="dropdown-menu animated--fade-in"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-
-                                <p style="float:left; margin-right:10px;">CTN : </p>
-                                <div class="dropdown mb-4" style="float:left; margin-right:15px;">
-                                    <button class="btn btn-primary dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false" style="width:130px; background-color:lightslategray; border-color:lightslategray">
-                                        Container
-                                    </button>
+                            <form     >
+                                <p style="float:left;">NS : </p>
+                                <div class="col-sm-3 mb-3 mb-sm-10" style="float:left;">
                                     
-                                    <div class="dropdown-menu animated--fade-in"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="namespace">
                                 </div>
 
-                                <!-- minmax -->
-                                <p style="float:left;">MAX : </p>
-                                <div class="col-sm-1 mb-3 mb-sm-10" style="float:left;">
-                                    
-                                    <input type="text" class="form-control form-control-user" id="inputmax"
-                                        placeholder="Max" name="inputmax" value="">
+                                <p style="float:left;">DEPLOY : </p>
+                                <div class="col-sm-3 mb-3 mb-sm-10" style="float:left;">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="Deployment">
                                 </div>
 
-                                <p style="float:left;">MIN : </p>
-                                <div class="col-sm-1 mb-3 mb-sm-10" style="float:left;">
-                                    
-                                    <input type="text" class="form-control form-control-user" id="inputmin"
-                                        placeholder="Min" name="inputmin" value="">
-                                </div>
-
-                                <!--radiobutton-->
-                                <fieldset >
-                                    <p style="float:left; margin-right:30px;">HPA 기준 : </p>
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="radio" class="custom-control-input" id="cpuradio" name="hparadio" value="cpu" checked="checked"/>
-                                        <label class="custom-control-label" for="cpuradio">CPU</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="radio" class="custom-control-input" id="ramradio" name="hparadio" value="ram"/>
-                                        <label class="custom-control-label" for="ramradio">RAM</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox small" style="margin-left:82px;">
-                                        <input type="radio" class="custom-control-input" id="promqlradio" name="hparadio" value="promQL"/>
-                                        <label class="custom-control-label" for="promqlradio">PromQL</label>
-                                    </div>
-                                </fieldset>
-                            
                                 
-                            </form>
-
-
-                            <div class="my-2">
-                                <hr/>
-                                <!-- 삭제 -->
-                                <a href="#" class="btn btn-primary" style="float:right; margin-right:15px;">
-                                    <span class="icon text-white-50">
-                                    </span>
-                                    <span class="text">삭제</span>
-                                </a>
-                                <!--추가-->
-                                <a href="#" class="btn btn-primary" style="float:right; margin-right:15px;">
+                                <nav class="navbar navbar-expand navbar-light bg-light mb-2">
+                                    <a class="navbar-brand" href="#">HPA</a>
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Dropdown
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right animated--grow-in"
+                                                aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="#">Action</a>
+                                                <a class="dropdown-item" href="#">Another action</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Something else here</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                
+                                <a href="#" class="btn btn-primary" style="float:left; margin-right:15px;">
                                     <span class="icon text-white-50">
                                     </span>
                                     <span class="text">추가</span>
                                 </a>
-                            </div>
-
-                            <br/><br/>
-
+                                <a href="#" class="btn btn-primary ">
+                                    <span class="icon text-white-50">
+                                    </span>
+                                    <span class="text">삭제</span>
+                                </a>
+                                
+                            </form>
+                            <div class="my-2"><hr/></div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -227,15 +187,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for hpadata in hpadatas %}
                                         <tr>
-                                            <td onClick="">{{ hpadata.maxcpu }}</td>
-                                            <td onClick="">{{ hpadata.maxram }}</td>
-                                            <td onClick="">{{ hpadata.maxrep }}</td>
-                                            <td onClick="">{{ hpadata.minrep }}</td>
-                                            <td onClick="">{{ hpadata.autosche }}</td>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011/04/25</td>
                                         </tr>
-                                        {% endfor %}
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                            <td>2011/07/25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ashton Cox</td>
+                                            <td>Junior Technical Author</td>
+                                            <td>San Francisco</td>
+                                            <td>66</td>
+                                            <td>2009/01/12</td>
+                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
